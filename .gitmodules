@@ -1,0 +1,3 @@
+[submodule "lib/SKX-SF-Conflicts"]
+	path = lib/SKX-SF-Conflicts
+	url = https://github.com/victoryang00/SKX-SF-Conflicts
