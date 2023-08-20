@@ -1,11 +1,24 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
-
+#include <iostream>
+#include <unistd.h>
+#include <signal.h>
+#include <sys/time.h>
+#include <math.h>
+#include <iomanip>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <string>
+#include <assert.h>
+#include <bitset>
+#include "cpucounters.h"
+#include "utils.h"
 // ------------------
 // regular C++ header
 // ------------------
 
-namespace mymodule {
+namespace sprtop {
 
 class Foo
 {
@@ -35,7 +48,7 @@ public:
 
 };
 
-} // namespace mymodule
+} // namespace sprtop
 
 // ----------------
 // Python interface
@@ -43,17 +56,17 @@ public:
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(mymodule, m)
+PYBIND11_MODULE(sprtop_core, m)
 {
-    py::class_<mymodule::Foo>(m, "Foo")
+    py::class_<sprtop::Foo>(m, "Foo")
         .def(py::init<>())
 
         .def("bar",
-             static_cast<std::vector<double> (mymodule::Foo::*)(const std::vector<double>&) const>(&mymodule::Foo::bar),
+             static_cast<std::vector<double> (sprtop::Foo::*)(const std::vector<double>&) const>(&sprtop::Foo::bar),
              py::arg("a"))
 
         .def("bar",
-             static_cast<std::vector<double> (mymodule::Foo::*)(const std::vector<double>&, double) const>(&mymodule::Foo::bar),
+             static_cast<std::vector<double> (sprtop::Foo::*)(const std::vector<double>&, double) const>(&sprtop::Foo::bar),
              py::arg("a"),
              py::arg("f"));
 }
