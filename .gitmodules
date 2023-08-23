@@ -1,3 +1,9 @@
 [submodule "lib/SKX-SF-Conflicts"]
 	path = lib/SKX-SF-Conflicts
 	url = https://github.com/victoryang00/SKX-SF-Conflicts
+[submodule "lib/MeshUp"]
+	path = lib/MeshUp
+	url = https://github.com/stefan1wan/MeshUp
+[submodule "lib/pcm"]
+	path = lib/pcm
+	url = https://github.com/intel/pcm

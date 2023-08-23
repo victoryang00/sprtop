@@ -28,7 +28,6 @@ class cmake_build_ext(build_ext):
         args = [
             f"cmake",
             f"-DCMAKE_BUILD_TYPE=Release",
-            f"-DBUILD_PYTHON=ON",
             f"-DPYTHON_EXECUTABLE={sys.executable}",
             f"-DPYTHON_LIBRARY_OUTPUT_DIRECTORY={build_temp}",
             path_to_source,
@@ -67,5 +66,6 @@ setup(
     author_email="victoryang00@ucsc.edu",
     install_requires=["pybind11>=2.4"],
     ext_modules=ext_modules,
+     cmdclass={"build_ext": cmake_build_ext},
     packages=find_packages(),
 )

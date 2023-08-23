@@ -1,11 +1,13 @@
 cmake_minimum_required(VERSION 3.18)
 
-project(strtop_core)
+project(sprtop_core)
 
 set(CMAKE_CXX_STANDARD 23)
 find_package(Threads REQUIRED)
 find_package(pybind11 REQUIRED CONFIG)
-pybind11_add_module(strtop_core sprtop/strtop_core.cpp)
-target_link_libraries(strtop_core PRIVATE pybind11::module Threads::Threads)
-include_directories(${CMAKE_SOURCE_DIR}/lib/pcm/src)
-add_subdirectory(${CMAKE_SOURCE_DIR}/lib/pcm/)
+pybind11_add_module(sprtop_core sprtop/sprtop_core.cpp)
+target_link_libraries(sprtop_core PRIVATE pybind11::module Threads::Threads)
+add_executable(sprtop_test sprtop/sprtop_test.cpp)
+target_link_libraries(sprtop_test PRIVATE pybind11::module Threads::Threads)
+include_directories(lib/pcm/src)
+add_subdirectory(lib/pcm/)
