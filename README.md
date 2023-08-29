@@ -1,2 +1,4 @@
-# Sapphire Rapids Top
-This project aims to expose the coreid to physical core map which can be good for scheduling jobs or do RDT on SPR.
+# Sapphire Rapids Topo
+This project aims to expose the core id to physical cha id map which can be good for scheduling jobs or do RDT on SPR.
+
+![SPR-topo](image.png)
