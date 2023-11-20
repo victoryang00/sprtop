@@ -5,7 +5,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/lib/MeshUp/MeshReverseEngineering/core2cha_layout",
-            "args": [],
+            "args": [""],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

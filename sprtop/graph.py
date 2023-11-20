@@ -13,18 +13,18 @@ class SPRTopMap:
         corner_right = "╗" if is_top else ("╝" if is_bottom else "╣")
         middle = "╦" if is_top or is_bottom else "╬"
         line_piece = "═" * (self.width + 2)
-        
+
         # Create segments for each column
         segments = [line_piece for _ in self.data[0]]
-        
+
         # Intersperse segments with middle dividers
         result_parts = []
         for segment in segments[:-1]:
             result_parts.append(segment)
             result_parts.append(middle)
         result_parts.append(segments[-1])
-        
-        return corner_left + ''.join(result_parts) + corner_right
+
+        return corner_left + "".join(result_parts) + corner_right
 
     def display(self):
         print(self._draw_separator(is_top=True))
@@ -45,12 +45,12 @@ class SPRTopMap:
 
 
 if __name__ == "__main__":
-    contexts = [["context1a", "context2a", "context3a"],
-                ["context1b", "context2b", "context3b"]]
-    cores = [["core1a", "core2a", "core3a"],
-             ["core1b", "core2b", "core3b"]]
-    maps = [["map1a", "map2a", "map3a"],
-            ["map1b", "map2b", "map3b"]]
+    contexts = [
+        ["context1a", "context2a", "context3a"],
+        ["context1b", "context2b", "context3b"],
+    ]
+    cores = [["core1a", "core2a", "core3a"], ["core1b", "core2b", "core3b"]]
+    maps = [["map1a", "map2a", "map3a"], ["map1b", "map2b", "map3b"]]
 
     cpu_map = SPRTopMap(contexts, cores, maps)
     cpu_map.display()
