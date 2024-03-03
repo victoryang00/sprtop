@@ -2,6 +2,7 @@
 from sprtop.sprtop_core import *
 from sprtop.graph import SPRTopMap
 
+# first write read from the file if not exist
 
 def run():
     print(SPRCoreCHA().get_core_cha(0))
